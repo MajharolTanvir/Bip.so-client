@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 
 const MovieCard = ({ movies }) => {
   const navigate = useNavigate();
-  console.log(movies);
 
   const handleDetails = (id) => {
     navigate(`/movie/${id}`);

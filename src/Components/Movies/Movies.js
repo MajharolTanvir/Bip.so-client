@@ -5,10 +5,10 @@ import Header from "./Header/Header";
 import MovieCard from "./MovieCard/MovieCard";
 
 const Movies = () => {
+  //   ? All data api  //////
   const {
     data: moviesData,
     isLoading,
-    error,
   } = useQuery(["moviesData"], () =>
     fetch(" https://movie-task.vercel.app/api/popular?page=1").then((res) =>
       res.json()
@@ -20,7 +20,6 @@ const Movies = () => {
   }
 
   const movies = moviesData.data.results;
-  console.log(movies);
   return (
     <div>
       <Header></Header>
