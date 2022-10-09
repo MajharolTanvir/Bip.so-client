@@ -10,6 +10,9 @@ const Movies = () => {
   const [searchMovie, setSearchMovie] = useState([]);
   const { moviesData } = useMovieData();
   const movies = moviesData?.data?.results;
+  const searchYearFilter = searchMovie?.filter(
+    (m) => m.release_date?.split("-")[0] === year
+  );
 
   //   ? All data api  //////
   useEffect(() => {
@@ -17,14 +20,18 @@ const Movies = () => {
       .then((res) => res.json())
       .then((data) => setSearchMovie(data?.data.results));
   }, [search]);
-  console.log(searchMovie);
+
+    console.log(searchMovie.length);
   return (
     <div>
       <Header setYear={setYear} setSearch={setSearch}></Header>
       {searchMovie.length === 0 ? (
-        <MovieCard movies={movies} year={year}></MovieCard>
+        <MovieCard movies={movies}></MovieCard>
       ) : (
-        <SearchMovie searchMovie={searchMovie} year={year}></SearchMovie>
+        <SearchMovie
+          searchMovie={searchMovie}
+          searchYearFilter={searchYearFilter}
+        ></SearchMovie>
       )}
     </div>
   );

@@ -27,9 +27,15 @@ const Header = ({ setYear, setSearch }) => {
             className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52"
           >
             <select onChange={(e) => handleYear(e)} className="select w-full">
-              <option>2021</option>
               <option>2022</option>
-              <option>2023</option>
+              <option>2021</option>
+              <option>2020</option>
+              <option>2019</option>
+              <option>2018</option>
+              <option>2017</option>
+              <option>2016</option>
+              <option>2015</option>
+              <option>2014</option>
             </select>
           </ul>
         </div>
