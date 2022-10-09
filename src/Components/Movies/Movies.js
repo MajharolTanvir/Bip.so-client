@@ -21,9 +21,9 @@ const Movies = () => {
       .then((data) => setSearchMovie(data?.data.results));
   }, [search]);
 
-    console.log(searchMovie.length);
+  console.log(searchMovie.length);
   return (
-    <div>
+    <div className="md:mt-5">
       <Header setYear={setYear} setSearch={setSearch}></Header>
       {searchMovie.length === 0 ? (
         <MovieCard movies={movies}></MovieCard>

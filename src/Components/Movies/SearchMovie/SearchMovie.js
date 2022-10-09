@@ -10,10 +10,10 @@ const SearchMovie = ({ searchYearFilter, searchMovie }) => {
   console.log(searchYearFilter);
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 mt-10">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-3 gap-7 mt-10">
       {searchYearFilter.length === 0
         ? searchMovie?.map((m) => (
-            <div key={m.id} className="card w-96 bg-base-100 shadow-xl">
+            <div key={m.id} className="card w-full bg-base-100 shadow-xl">
               <figure>
                 <img
                   src={`https://image.tmdb.org/t/p/original${m.poster_path}`}
