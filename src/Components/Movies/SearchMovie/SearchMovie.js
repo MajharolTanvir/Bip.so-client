@@ -1,15 +1,16 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-const MovieCard = ({ movies, year }) => {
+const SearchMovie = ({ year, searchMovie }) => {
   const navigate = useNavigate();
 
   const handleDetails = (id) => {
     navigate(`/movie/${id}`);
   };
+
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 mt-10">
-      {movies?.map((m) =>
+      {searchMovie?.map((m) =>
         m?.release_date?.split("-")[0] === year ? (
           <div key={m.id} className="card w-96 bg-base-100 shadow-xl">
             <figure>
@@ -58,4 +59,4 @@ const MovieCard = ({ movies, year }) => {
   );
 };
 
-export default MovieCard;
+export default SearchMovie;

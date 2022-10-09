@@ -1,14 +1,18 @@
 import React from "react";
 import { AiFillCaretDown } from "react-icons/ai";
 
-const Header = ({ setYear }) => {
+const Header = ({ setYear, setSearch }) => {
   const handleYear = (e) => {
     setYear(e.target.value);
+  };
+  const handleSearch = (e) => {
+    setSearch(e.target.value);
   };
   return (
     <div className="grid grid-cols-3 justify-between items-center">
       <h5 className="text-2xl font-bold py-4">Movie List</h5>
       <input
+        onChange={(e) => handleSearch(e)}
         type="text"
         placeholder="Search"
         className="p-2 rounded-xl bg-transparent border-2 border-primary"
